@@ -30,3 +30,4 @@ public class Main
 		System.out.println("la somma dei goal è " + SommaGoal);
 	}
 }
+
