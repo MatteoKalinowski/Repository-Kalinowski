@@ -9,13 +9,13 @@ int main() {
     int pid = fork();
 
     if (pid < 0) {
-        // Errore nella creazione del processo
+       
         perror("Errore nella fork");
         exit(1);
     }
 
     if (pid == 0) {
-        // ---- PROCESSO FIGLIO ----
+       
         printf("\n[FIGLIO] Sono il processo figlio!\n");
         printf("[FIGLIO] Mio PID = %d\n", getpid());
         printf("[FIGLIO] PID del padre = %d\n", getppid());
@@ -30,7 +30,7 @@ int main() {
         exit(42);  
     }
     else {
-        // ---- PROCESSO PADRE ----
+       
         printf("\n[PADRE] Sono il processo padre.\n");
         printf("[PADRE] Mio PID = %d\n", getpid());
         printf("[PADRE] PID del figlio = %d\n", pid);
@@ -42,7 +42,7 @@ int main() {
 
         printf("[PADRE] Il figlio è terminato.\n");
 
-        // Analisi dello status
+      
         if (WIFEXITED(status)) {
             int codice = WEXITSTATUS(status);
             printf("[PADRE] Il figlio è terminato normalmente.\n");
